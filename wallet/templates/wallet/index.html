@@ -1,0 +1,14 @@
+<!doctype html>
+<html>	
+	<body>
+		<p>Private Key: {{privKey}}</p>
+		<p>Public Key: {{pubKey}}</p>
+		<p>Address: {{P2PKH_address}}</p>
+		<p>txs: {{txs}}</p>
+		<form action="{% url 'send' %}" method="post">
+			{% csrf_token %}
+			toAddr: <input type="text" name="toAddr" id="toAddr" /><br/>
+			amount: <input type="text" name="amount" id="amount" />
+			<input type="submit" value = "Send" />
+		</form>
+</html>
